@@ -4,19 +4,28 @@ var permanent=require('../Models/permanent');
 
 
 
-router.get('/',function(req,res,next){
+router.get('/:id1?', function(req,res, next){
 
-    permanent.getAllpermanent(function(err,rows){
- 
-     if(err){
-         res.json(err);
-     }
-     else{
-         res.json(rows);
-     } 
- 
-  });
-
+    if(req.params.id1){
+        permanantadd.getAllPermanantAddById(req.params.id1, function(err,rows){
+            if(err){
+                res.json(err);
+            }
+            else{
+                res.json(rows);
+            }
+        })
+    }
+    else{
+    permanantadd.getAllPermanantAdd(function(err, rows){
+        if(err){
+            res.json(err);
+        }
+        else{
+            res.json(rows);
+        }
+    }); 
+}
 });
 
 router.post('/',function(req,res,next){

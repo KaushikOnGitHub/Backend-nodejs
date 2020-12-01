@@ -11,12 +11,27 @@ router.get('/',function(req,res,next){
          res.json(err);
      }
      else{
-         res.json(rows);
+         res.json(rows); 
      } 
  
   });
 
 });
+
+router.get('/:id?', function(req, res, next) {
+
+    basic.getAllexperienceById(req.params.id, function(err, rows)
+    {  
+        if (err) {
+            res.json(err);
+        }
+        else {
+            res.json(rows);
+        }
+    });
+    
+    }); 
+
 
 router.post('/',function(req,res,next){
 

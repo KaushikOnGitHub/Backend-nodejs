@@ -7,6 +7,12 @@ var basic={
        return db.query("select * from basic;",callback);
     },
 
+    getAllbasicById:function(id, callback)
+    {
+     return db.query("select * from basic where id=?",[id],callback);
+    },
+
+
     addbasic:function(basic,callback){
         return db.query("Insert into basic (Employee_no,Title,Addressed_as,First_Name,Middle_Name,Last_Name,Initials,user_gender,dob,Employee_Age,Official_Phone,Personal_Mobile,Fax,Official_Email,Personal_Email,Personal_Email_2,Personal_Email_3,bank_name,account_type,payment_type,account_no,branch_details,ifsc_code,reimbursement_bank_name,reimbursement_acc_no,birth_place,religion,caste,domicile,nationality,voter_id,pan_no,aadhaar_no,maritial_status,no_of_status,marriage_date) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",[
             basic.Employee_no,

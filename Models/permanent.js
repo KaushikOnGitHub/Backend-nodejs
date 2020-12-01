@@ -7,6 +7,11 @@ var permanent={
        return db.query('select * from permanent',callback);
     },
 
+    getAllPermanantAddById:function(id, callback)
+    {
+     return db.query("select * from permanant where id=?",[id],callback);
+    },
+
     addpermanent:function(permanent,callback){
         
         return db.query("Insert into permanent (id,address_permanent,percity,percountry,perstate,perdistrict,perpin,phone1,phone2,fax_mobile,personal_email) values((select id from basic ORDER BY id DESC LIMIT 1),?,?,?,?,?,?,?,?,?,?)",[permanent.id, permanent.address_permanent, permanent.percity, permanent.percountry, permanent.perstate, permanent.perdistrict, permanent.perpin, permanent.phone1, permanent.phone2, permanent.fax_mobile, permanent.personal_email_id],callback);

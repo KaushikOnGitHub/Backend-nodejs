@@ -11,7 +11,7 @@ var permanentRouter =require('./routes/perma')
 var skillRouter = require('./routes/skill');
 var qualificationRouter = require('./routes/qualification');
 var presentRouter = require('./routes/presentRouter');
-//var experienceRouter = require('./routes/experience');
+// var experienceRouter = require('./routes/experience');
 
 var app = express();
 
@@ -32,7 +32,7 @@ app.use('/permanent', permanentRouter);
 app.use('/skill', skillRouter);
 app.use('/qualification', qualificationRouter);
 app.use('/present', presentRouter);
-//app.use('/experience', experienceRouter);
+// app.use('/experience', experienceRouter);
 
 
 // catch 404 and forward to error handler
